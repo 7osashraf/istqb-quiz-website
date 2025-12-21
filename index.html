@@ -205,7 +205,11 @@
 
     <script>
         function goToChapter(chapterNum) {
-            alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
+            if (chapterNum === 1) {
+                window.location.href = 'chapter1.html';
+            } else {
+                alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
+            }
         }
     </script>
 </body>
