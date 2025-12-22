@@ -122,6 +122,16 @@
             opacity: 0.8;
         }
 
+        .best-score-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
         .coming-soon-badge {
             display: inline-block;
             background: rgba(255, 215, 0, 0.3);
@@ -157,8 +167,8 @@
                 <div class="chapter-number">01</div>
                 <div class="chapter-title">Fundamentals of Testing</div>
                 <div class="chapter-desc">Learn the basics: What is testing? Why is testing necessary? Seven testing principles and more.</div>
-                <div class="stats">📝 Questions ready</div>
-                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="stats">📝 57 Questions</div>
+                <div class="best-score-badge" id="chapter1Score">🏆 Best: 0/57</div>
             </div>
 
             <div class="chapter-card" onclick="goToChapter(2)">
@@ -211,6 +221,15 @@
                 alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
             }
         }
+
+        function updateScores() {
+            const ch1Score = localStorage.getItem('chapter1BestScore') || 0;
+            if (ch1Score > 0) {
+                document.getElementById('chapter1Score').textContent = '🏆 Best: ' + ch1Score + '/57';
+            }
+        }
+
+        updateScores();
     </script>
 </body>
 </html>
