@@ -175,8 +175,8 @@
                 <div class="chapter-number">02</div>
                 <div class="chapter-title">Testing Throughout SDLC</div>
                 <div class="chapter-desc">Software development lifecycle models, test levels, and test types.</div>
-                <div class="stats">📝 Questions ready</div>
-                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="stats">📝 42 Questions</div>
+                <div class="best-score-badge" id="chapter2Score">🏆 Best: 0/42</div>
             </div>
 
             <div class="chapter-card" onclick="goToChapter(3)">
@@ -215,19 +215,26 @@
 
     <script>
         function goToChapter(chapterNum) {
-            if (chapterNum === 1) {
-                window.location.href = 'chapter1.html';
-            } else {
-                alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
-            }
-        }
+    if (chapterNum === 1) {
+        window.location.href = 'chapter1.html';
+    } else if (chapterNum === 2) {
+        window.location.href = 'chapter2.html';
+    } else {
+        alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
+    }
+}
 
-        function updateScores() {
-            const ch1Score = localStorage.getItem('chapter1BestScore') || 0;
-            if (ch1Score > 0) {
-                document.getElementById('chapter1Score').textContent = '🏆 Best: ' + ch1Score + '/57';
-            }
-        }
+function updateScores() {
+    const ch1Score = localStorage.getItem('chapter1BestScore') || 0;
+    const ch2Score = localStorage.getItem('chapter2BestScore') || 0;
+    
+    if (ch1Score > 0) {
+        document.getElementById('chapter1Score').textContent = '🏆 Best: ' + ch1Score + '/57';
+    }
+    if (ch2Score > 0) {
+        document.getElementById('chapter2Score').textContent = '🏆 Best: ' + ch2Score + '/42';
+    }
+}
 
         updateScores();
     </script>
