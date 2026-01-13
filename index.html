@@ -191,8 +191,8 @@
                 <div class="chapter-number">04</div>
                 <div class="chapter-title">Test Techniques</div>
                 <div class="chapter-desc">Black-box, white-box, and experience-based test design techniques.</div>
-                <div class="stats">📝 Questions ready</div>
-                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="stats">📝 51 Questions</div>
+                <div class="best-score-badge" id="chapter4Score">🏆 Best: 0/51</div>
             </div>
 
             <div class="chapter-card" onclick="goToChapter(5)">
@@ -221,6 +221,8 @@
         window.location.href = 'chapter2.html';
     } else if (chapterNum === 3) {
         window.location.href = 'chapter3.html';
+    } else if (chapterNum === 4) {
+      window.location.href = 'chapter4.html';
     } else {
         alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
     }
@@ -230,6 +232,8 @@ function updateScores() {
     const ch1Score = localStorage.getItem('chapter1BestScore') || 0;
     const ch2Score = localStorage.getItem('chapter2BestScore') || 0;
     const ch3Score = localStorage.getItem('chapter3BestScore') || 0;
+    const ch4Score = localStorage.getItem('chapter4BestScore') || 0;
+
     
     if (ch1Score > 0) {
         document.getElementById('chapter1Score').textContent = '🏆 Best: ' + ch1Score + '/57';
@@ -239,6 +243,9 @@ function updateScores() {
     }
     if (ch3Score > 0) {
         document.getElementById('chapter3Score').textContent = '🏆 Best: ' + ch3Score + '/28';
+    }
+    if (ch4Score > 0) {
+      document.getElementById('chapter4Score').textContent = '🏆 Best: ' + ch4Score + '/51';
     }
 }
 
