@@ -337,4 +337,4 @@ const questions = [
         explanation: "The developer makes a mistake/error which causes a defect/fault/bug which may cause a failure when the code is dynamically tested or executed."
     }
 ];
-];
+
