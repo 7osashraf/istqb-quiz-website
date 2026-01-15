@@ -199,8 +199,7 @@
                 <div class="chapter-number">05</div>
                 <div class="chapter-title">Test Management</div>
                 <div class="chapter-desc">Test planning, monitoring, control, and configuration management.</div>
-                <div class="stats">📝 Questions ready</div>
-                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="stats">📝 60 Questions</div> <div class="best-score-badge" id="chapter5Score">🏆 Best: 0/60</div>
             </div>
 
             <div class="chapter-card" onclick="goToChapter(6)">
@@ -223,6 +222,8 @@
         window.location.href = 'chapter3.html';
     } else if (chapterNum === 4) {
       window.location.href = 'chapter4.html';
+    } else if (chapterNum === 5) {
+        window.location.href = 'chapter5.html';
     } else {
         alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
     }
@@ -233,6 +234,7 @@ function updateScores() {
     const ch2Score = localStorage.getItem('chapter2BestScore') || 0;
     const ch3Score = localStorage.getItem('chapter3BestScore') || 0;
     const ch4Score = localStorage.getItem('chapter4BestScore') || 0;
+    const ch5Score = localStorage.getItem('chapter5BestScore') || 0;
 
     
     if (ch1Score > 0) {
@@ -247,6 +249,7 @@ function updateScores() {
     if (ch4Score > 0) {
       document.getElementById('chapter4Score').textContent = '🏆 Best: ' + ch4Score + '/67';
     }
+    if (ch5Score > 0) document.getElementById('chapter5Score').textContent = '🏆 Best: ' + ch5Score + '/60';
 }
 
         updateScores();
