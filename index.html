@@ -206,8 +206,8 @@
                 <div class="chapter-number">06</div>
                 <div class="chapter-title">Tool Support for Testing</div>
                 <div class="chapter-desc">Test tool considerations, types of test tools, and tool support benefits.</div>
-                <div class="stats">📝 Questions ready</div>
-                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="stats">📝 12 Questions</div>
+                <div class="best-score-badge" id="chapter6Score">🏆 Best: 0/12</div>
             </div>
         </div>
     </div>
@@ -224,6 +224,8 @@
       window.location.href = 'chapter4.html';
     } else if (chapterNum === 5) {
         window.location.href = 'chapter5.html';
+    } else if (chapterNum === 6) {
+        window.location.href = 'chapter6.html';
     } else {
         alert('Chapter ' + chapterNum + ' questions coming soon! 🚀');
     }
@@ -235,6 +237,7 @@ function updateScores() {
     const ch3Score = localStorage.getItem('chapter3BestScore') || 0;
     const ch4Score = localStorage.getItem('chapter4BestScore') || 0;
     const ch5Score = localStorage.getItem('chapter5BestScore') || 0;
+    const ch6Score = localStorage.getItem('chapter6BestScore') || 0;
 
     
     if (ch1Score > 0) {
@@ -250,6 +253,7 @@ function updateScores() {
       document.getElementById('chapter4Score').textContent = '🏆 Best: ' + ch4Score + '/67';
     }
     if (ch5Score > 0) document.getElementById('chapter5Score').textContent = '🏆 Best: ' + ch5Score + '/60';
+    if (ch6Score > 0) document.getElementById('chapter6Score').textContent = '🏆 Best: ' + ch6Score + '/12';
 }
 
         updateScores();
