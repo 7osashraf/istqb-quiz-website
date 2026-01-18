@@ -99,16 +99,17 @@ const questions = [
         explanation: "We need a total of four test cases: TC1 (ground floor, small garden), TC2 (ground floor, large garden), TC3 (first floor, no garden), TC4 (second or higher floor, no garden)"
     },
     {
-        q: "The system for selling cinema tickets calculates the discount type based on the client's birth year (BY) and on the current year (CY) as follows: Let D be the difference between CY and BY, that is, D = CY - BY. Your test suite already contains two test cases: BY = 1990, CY = 2020, expected result: no discount; BY = 2030, CY = 2029, expected result: print the error message. Which of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?",
-        options: [
-            "BY = 2001, CY = 2065",
-            "BY = 1900, CY = 1965",
-            "BY = 2011, CY = 2029",
-            "BY = 2000, CY = 2000"
-        ],
-        correct: 3,
-        explanation: "CY - BY = 0, so these inputs correspond to a partition that is not yet covered (student discount)"
-    },
+    q: "The system for selling cinema tickets calculates the discount type based on the client's birth year (BY) and on the current year (CY) as follows:\nLet D be the difference between CY and BY, that is, D = CY - BY\n• If D < 0 then print the error message \"birth year cannot be greater than current year\"\n• If 0 ≤ D < 18 then apply the student discount\n• If 18 ≤ D < 65 then apply no discount\n• If D ≥ 65 then apply the pensioner discount\n\nYour test suite already contains two test cases:\n• BY = 1990, CY = 2020, expected result: no discount\n• BY = 2030, CY = 2029, expected result: print the error message\n\nWhich of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?",
+    options: [
+        "BY = 2001, CY = 2065",
+        "BY = 1900, CY = 1965",
+        "BY = 1965, CY = 1900",
+        "BY = 2011, CY = 2029",
+        "BY = 2000, CY = 2000"
+    ],
+    correct: [1, 4],
+    explanation: "There are two equivalence partitions that are not yet covered: 'student discount' and 'pensioner discount'.\nOption (b) [BY = 1900, CY = 1965] gives D = 65, covering the 'pensioner discount'.\nOption (e) [BY = 2000, CY = 2000] gives D = 0, covering the 'student discount'.\nBoth sets help achieve full coverage."
+    }    ,
     {
         q: "You are testing a PIN validator, which accepts valid PINs and rejects invalid PINs. A PIN is a sequence of digits. A PIN is valid if it consists of four digits, which are not all the same digit. You have identified the following valid equivalence partitions: Variable: PIN code length - The partition 'length correct' - four-digit PINs, The partition 'length incorrect' - PINs with length other than 4. Variable: Number of different digits - The partition 'number of different digits correct' - PINs with at least two different digits, The partition 'number of different digits incorrect' - PINs with all digits being the same. Which of the following is the BEST set of input test data to cover the identified equivalence partitions?",
         options: [
