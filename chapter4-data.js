@@ -140,7 +140,7 @@ const questions = [
             "3",
             "4"
         ],
-        correct: 2,
+        correct: 3,
         explanation: "The values to be tested are 20, 100, 500 and no selection."
     },
     {
