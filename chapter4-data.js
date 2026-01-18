@@ -129,7 +129,7 @@ const questions = [
             "10",
             "12"
         ],
-        correct: 0,
+        correct: 1,
         explanation: "You need a test for the invalid too low (0 or less), one for each valid partition, and one for invalid too high (> 100). It may not be more than 6 centre if it provides a proper error."
     },
     {
